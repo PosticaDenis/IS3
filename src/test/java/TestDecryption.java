@@ -1,9 +1,10 @@
 import org.junit.Test;
+import static org.junit.Assert.*;
 import util.ShiftUtil;
 
 /**
  * Created by c-denipost on 01-Dec-17.
- */
+ **/
 public class TestDecryption {
 
 
@@ -12,6 +13,8 @@ public class TestDecryption {
 
         ShiftUtil shiftUtil = new ShiftUtil();
 
-        System.out.println("Final result: " + shiftUtil.shift("buna", "ro", 26));
+        //System.out.println("Final result: " + shiftUtil.shift("buna", "ro", 1));
+        assertFalse(shiftUtil.shift("buna", "ro", 1).equals("buna"));
+        assertTrue(shiftUtil.shift("buna", "ro", 26).equals("buna"));
     }
 }
