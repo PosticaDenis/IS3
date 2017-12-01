@@ -1,57 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="GradleLocalSettings">
-    <option name="modificationStamps">
-      <map>
-        <entry key="$USER_HOME$/Downloads/PR-master-799bf231acb94d83b9402d843e27ff54424eea3e" value="2993221554000" />
-        <entry key="D:/APPOO/PR" value="2995900766245" />
-        <entry key="D:/FC" value="2941328781617" />
-        <entry key="D:/MyProject" value="3021867779456" />
-        <entry key="D:/OTHER/acceptTrunk" value="4497092429601" />
-        <entry key="D:/OTHER/dmTrunk" value="2996194802633" />
-        <entry key="D:/OTHER/ediCommnons" value="2978828821526" />
-        <entry key="D:/OTHER/engineering/file-generator" value="4447930232969" />
-        <entry key="D:/OTHER/tutsTrunk" value="2990668291578" />
-        <entry key="D:/OldAcceptance" value="10313978372231" />
-        <entry key="$PROJECT_DIR$" value="3024283606512" />
-        <entry key="$PROJECT_DIR$/../enr/qa/jtest-acceptance" value="3013895365670" />
-        <entry key="$PROJECT_DIR$/../enr/qa/jtest-datamart" value="3015197450762" />
-        <entry key="$PROJECT_DIR$/../enr/qa/tools/file-generator" value="4520843060765" />
-        <entry key="$PROJECT_DIR$/../enr/qa/tools/file-generator-service" value="3014494586123" />
-        <entry key="$PROJECT_DIR$/../enr/qa/tools/testcenter" value="3013895375996" />
-        <entry key="$PROJECT_DIR$/../enr/qa/tools/tutils" value="3013895377683" />
-        <entry key="D:/PAD_labs/pad" value="3022023818290" />
-        <entry key="D:/UI_tests" value="2956458561064" />
-        <entry key="D:/accept" value="2968117677959" />
-        <entry key="D:/accept860x" value="2976851871388" />
-        <entry key="D:/acceptTrunk" value="2984113960240" />
-        <entry key="D:/acceptance" value="2954624240807" />
-        <entry key="D:/datamart" value="2975520136051" />
-        <entry key="D:/datamart860x" value="2977443036202" />
-        <entry key="D:/dmTrunk" value="2996192785093" />
-        <entry key="D:/engineering/file-generator" value="2943378723076" />
-        <entry key="D:/engineering/file-generator-service" value="1475154984859" />
-        <entry key="D:/engineering/jtest-acceptance" value="41128165288213" />
-        <entry key="D:/engineering/jtest-acceptance1" value="47069007204034" />
-        <entry key="D:/engineering/jtest-acceptance1/InstallationValidationAutomation" value="47067970286571" />
-        <entry key="D:/jtest-ui-AccPortal" value="1493712256395" />
-        <entry key="D:/matchers" value="2974184560979" />
-        <entry key="D:/my-project" value="3021366776673" />
-        <entry key="D:/svn/engineering/apps/uo/enr-hix/trunk/qa/jtest-acceptance" value="2961206118240" />
-        <entry key="D:/svn/engineering/apps/uo/enr-hix/trunk/qa/jtest-acceptance1" value="16127686169715" />
-        <entry key="D:/svn/engineering/apps/uo/enr-hix/trunk/qa/tools/file-generator" value="2936217213496" />
-        <entry key="D:/svn/engineering/apps/uo/enr-hix/trunk/qa/tools/file-generator-service" value="1467813081154" />
-        <entry key="D:/testcenter" value="2982286481752" />
-        <entry key="D:/tests" value="45689975480967" />
-        <entry key="D:/tmp/PAD" value="3016690716077" />
-        <entry key="D:/tuts" value="2968122853064" />
-        <entry key="D:/tutsTrunk" value="2979553771285" />
-      </map>
-    </option>
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
-  </component>
   <component name="MarkdownProjectSettings">
     <PreviewSettings splitEditorLayout="SPLIT" splitEditorPreview="PREVIEW" useGrayscaleRendering="false" zoomFactor="1.0" maxImageWidth="0" showGitHubPageIfSynced="false" allowBrowsingInPreview="false" synchronizePreviewPosition="true" highlightPreviewType="NONE" highlightFadeOut="5" highlightOnTyping="true" synchronizeSourcePosition="true" verticallyAlignSourceAndPreviewSyncPosition="true" showSearchHighlightsInPreview="false" showSelectionInPreview="true">
       <PanelProvider>
@@ -121,7 +69,9 @@
       <textMaps />
     </LinkMapSettings>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_3" default="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/classes" />
+  </component>
   <component name="masterDetails">
     <states>
       <state key="GlobalLibrariesConfigurable.UI">
