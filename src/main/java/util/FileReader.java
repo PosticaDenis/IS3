@@ -18,7 +18,7 @@ public class FileReader {
         URL url = Resources.getResource(msgPath);
         try {
             message = Resources.toString(url, Charsets.UTF_8);
-            System.out.println("encoded message: " + message);
+            //System.out.println("encoded message: " + message);
         } catch (IOException e) {
             System.out.println("No message file found.");
             e.printStackTrace();

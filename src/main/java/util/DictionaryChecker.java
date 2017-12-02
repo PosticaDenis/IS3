@@ -14,32 +14,28 @@ public class DictionaryChecker {
 
     private URL url = this.getClass().getClassLoader().getResource("languages");
 
+    private StatsAnalyzer statsAnalyzer;
+
     public DictionaryChecker(List<String> allCombinations) {
 
         //availableLanguages = new ArrayList<String>();
         //setAvailableLanguages();
+        statsAnalyzer = new StatsAnalyzer(allCombinations);
 
         analyze(allCombinations);
     }
 
     private void analyze(List<String> allCombinations) {
 
-        for (String s: allCombinations) {
-            System.out.println("comb: " + s);
+        List<String> stats = new ArrayList<String>();
+
+        for (String lang: availableLanguages) {
+
+            StatisticsCollector statisticsCollector = new StatisticsCollector(lang, allCombinations, getDictionary(lang));
+            stats.add(statisticsCollector.generateStats());
         }
 
-        /*for (String msg: allCombinations) {
-
-            String[] words = msg.split("\\s+");
-            for (int i = 0; i < words.length; i++) {
-                // You may want to check for a non-word character before blindly
-                // performing a replacement
-                // It may also be necessary to adjust the character class
-                words[i] = words[i].replaceAll("[^\\w]", "");
-            }
-
-
-        }*/
+        statsAnalyzer.process(stats);
     }
 
     private void setAvailableLanguages() {
