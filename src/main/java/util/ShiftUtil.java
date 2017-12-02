@@ -8,52 +8,50 @@ package util;
  **/
 public class ShiftUtil {
 
-
-
-    public String shift(String letter, String language, int times) {
-
-        //try {
-            //byte bytes[] = letter.getBytes("ISO-8859-1");
-            //System.out.println("Initial letter: " + new String(bytes, "UTF-8"));
-            System.out.println(letter);
-        //} catch (UnsupportedEncodingException e) {
-        //    e.printStackTrace();
-        //}
-
+    public String shift(String message, String language, int times) {
         String bar = "";
 
-        if (language.equals("ru")) {
+        if (language.equals("cyrillic")) {
 
-            for (char c : letter.toCharArray()) {
-                if (Character.isUpperCase(c)) {
-                    bar += Character.toString((char) (((c - 'А' + times) % 32) + 'А'));
+            for (char c : message.toCharArray()) {
+                if (isCyrillicLetter(c)) {
+                    if (Character.isUpperCase(c)) {
+                        bar += Character.toString((char) (((c - 'А' + times) % 32) + 'А'));
+                    }
+                    else {
+                        bar += Character.toString((char) (((c - 'а' + times) % 32) + 'а'));
+                    }
                 }
                 else {
-                    bar += Character.toString((char) (((c - 'а' + times) % 32) + 'а'));
+                    bar += c;
                 }
             }
         }
-        /*if (language.equals("ro")) {
-            for (char c : letter.toCharArray()) {
-                if (Character.isUpperCase(c)) {
-                    bar += Character.toString((char) (((c - 'А' + times) % 32) + 'А'));
-                }
-                else {
-                    bar += Character.toString((char) (((c - 'а' + times) % 32) + 'а'));
-                }
-            }
-        }*/
         else {
-            for (char c : letter.toCharArray()) {
-                if (Character.isUpperCase(c)) {
-                    bar += Character.toString((char) (((c - 'A' + times) % 26) + 'A'));
+            for (char c : message.toCharArray()) {
+                if (isLatinLetter(c)) {
+                    if (Character.isUpperCase(c)) {
+                        bar += Character.toString((char) (((c - 'A' + times) % 26) + 'A'));
+                    }
+                    else {
+                        bar += Character.toString((char) (((c - 'a' + times) % 26) + 'a'));
+                    }
                 }
                 else {
-                    bar += Character.toString((char) (((c - 'a' + times) % 26) + 'a'));
+                    bar += c;
                 }
             }
         }
-
         return bar;
+    }
+
+    private static boolean isCyrillicLetter(char c) {
+        return (c >= 'а' && c <= 'я') ||
+                (c >= 'А' && c <= 'Я');
+    }
+
+    private static boolean isLatinLetter(char c) {
+        return (c >= 'a' && c <= 'z') ||
+                (c >= 'A' && c <= 'Z');
     }
 }
