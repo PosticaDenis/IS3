@@ -10,7 +10,7 @@ import java.util.*;
  **/
 public class DictionaryChecker {
 
-    private static List<String> availableLanguages = Arrays.asList("eng", "ro", "ru", "fr", "it", "esp", "de");
+    private static List<String> availableLanguages = Arrays.asList("eng", "ro", "ru");
 
     private URL url = this.getClass().getClassLoader().getResource("languages");
 

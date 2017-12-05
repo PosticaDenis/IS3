@@ -14,17 +14,21 @@ public class StatisticsCollector{
     private List<String> combinations;
     private Set<String> dictionary;
 
-    private int stat = 0;
-    private int key = 0;
+    //private int stat;
+    //private int key;
 
     public StatisticsCollector(String lang, List<String> aCombinations, Set<String> dictionary) {
 
         this.language = lang;
         this.combinations = aCombinations;
         this.dictionary = dictionary;
+
     }
 
     public String generateStats() {
+
+        int stat = 0;
+        int key = 0;
 
         int tmpStat;
         int counter = -1;
@@ -48,7 +52,7 @@ public class StatisticsCollector{
                 } else {
 
                     for (String w: dictionary) {
-                        if (w.equals(word)) {
+                        if (w.equals(word.toLowerCase())) {
                             tmpStat += word.length();
                         }
                     }

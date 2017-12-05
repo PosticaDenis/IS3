@@ -21,7 +21,7 @@ public class TestDecryption {
     @Test
     public void testDecoder() {
 
-        String[] msg = {"messages/m1.txt", "messages/m2.txt", "messages/m3.txt", "messages/m4.txt"};
+        String[] msg = {"messages/m1.txt", "messages/m2.txt", "messages/m3.txt", "messages/m5.txt", "messages/m4.txt"};
 
         for (String m: msg) {
             new Decoder(m);

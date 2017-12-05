@@ -22,7 +22,7 @@ public class StatsAnalyzer {
 
         for (int i = 0; i < stats.size() - 1; i++) {
 
-            if (Integer.parseInt(stats.get(i+1).split(":")[0]) > Integer.parseInt(stats.get(1).split(":")[0])) {
+            if (Integer.parseInt(stats.get(i+1).split(":")[0]) > Integer.parseInt(stats.get(i).split(":")[0])) {
 
                 bingo = stats.get(i+1);
             }
