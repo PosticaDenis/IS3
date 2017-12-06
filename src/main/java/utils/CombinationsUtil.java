@@ -1,4 +1,4 @@
-package util;
+package utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,14 +6,14 @@ import java.util.List;
 /**
  * Created by Dennis on 02-Dec-17.
  **/
-public class SomeUtil {
+public class CombinationsUtil {
 
     private List<String> allCombinations;
     private ShiftUtil shiftUtil;
 
     private static boolean isCyrillic = false;
 
-    public SomeUtil(String message) {
+    public CombinationsUtil(String message) {
 
         allCombinations = new ArrayList<String>();
         shiftUtil = new ShiftUtil();

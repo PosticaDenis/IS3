@@ -1,4 +1,6 @@
-package util;
+package utils;
+
+import com.google.common.annotations.Beta;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,19 +10,19 @@ import java.util.*;
 /**
  * Created by Dennis on 02-Dec-17.
  **/
-public class DictionaryChecker {
+public class DictionaryUtil {
 
     private static List<String> availableLanguages = Arrays.asList("eng", "ro", "ru");
 
     private URL url = this.getClass().getClassLoader().getResource("languages");
 
-    private StatsAnalyzer statsAnalyzer;
+    private StatsAnalyzerUtil statsAnalyzerUtil;
 
-    public DictionaryChecker(List<String> allCombinations) {
+    public DictionaryUtil(List<String> allCombinations) {
 
         //availableLanguages = new ArrayList<String>();
         //setAvailableLanguages();
-        statsAnalyzer = new StatsAnalyzer(allCombinations);
+        statsAnalyzerUtil = new StatsAnalyzerUtil(allCombinations);
 
         analyze(allCombinations);
     }
@@ -31,13 +33,14 @@ public class DictionaryChecker {
 
         for (String lang: availableLanguages) {
 
-            StatisticsCollector statisticsCollector = new StatisticsCollector(lang, allCombinations, getDictionary(lang));
-            stats.add(statisticsCollector.generateStats());
+            StatisticsCollectorUtil statisticsCollectorUtil = new StatisticsCollectorUtil(lang, allCombinations, getDictionary(lang));
+            stats.add(statisticsCollectorUtil.generateStats());
         }
 
-        statsAnalyzer.process(stats);
+        statsAnalyzerUtil.process(stats);
     }
 
+    @Beta
     private void setAvailableLanguages() {
 
         try {
@@ -57,18 +60,22 @@ public class DictionaryChecker {
     }
 
     private Set<String> getDictionary(String language) {
-        Scanner scanner = null;
+        Scanner scanner;
+        LinkedHashSet<String> dictionary = new LinkedHashSet<String>();
+
         try {
             scanner = new Scanner(new File(url.toString().substring(5) + "/" + language + ".txt"));
+
+
+            while (scanner.hasNext()) {
+                dictionary.add(scanner.next().trim().toLowerCase());
+            }
         } catch (FileNotFoundException e) {
-            System.out.println("Dictionary for language " + language + " was not found.");
+            //System.out.println("Dictionary for language " + language + " was not found.");
+            System.err.println("Dictionary for language " + language + " was not found.");
             e.printStackTrace();
         }
 
-        LinkedHashSet<String> dictionary = new LinkedHashSet<String>();
-        while (scanner.hasNext()) {
-            dictionary.add(scanner.next().trim().toLowerCase());
-        }
         return dictionary;
     }
 }

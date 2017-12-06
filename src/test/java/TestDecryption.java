@@ -1,7 +1,11 @@
+import com.google.common.base.Charsets;
+import com.google.common.io.Resources;
 import decoder.Decoder;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import util.ShiftUtil;
+import utils.ShiftUtil;
+
+import java.io.IOException;
 
 /**
  * Created by c-denipost on 01-Dec-17.
@@ -9,13 +13,12 @@ import util.ShiftUtil;
 public class TestDecryption {
 
     @Test
-    public void test() {
+    public void testShiftUtil() {
 
         ShiftUtil shiftUtil = new ShiftUtil();
 
-        //System.out.println("Final result: " + shiftUtil.shift("buna", "ro", 1));
-        assertFalse(shiftUtil.shift("buna", "ro", 1).equals("buna"));
-        assertTrue(shiftUtil.shift("buna", "ro", 26).equals("buna"));
+        assertFalse(shiftUtil.shift("Привет!", "cyrillic", 7).equals("Привет!"));
+        assertTrue(shiftUtil.shift("Hello Darkness, my old friend!", "latin", 25).equals("Gdkkn Czqjmdrr, lx nkc eqhdmc!"));
     }
 
     @Test
@@ -23,9 +26,18 @@ public class TestDecryption {
 
         String[] msg = {"messages/m1.txt", "messages/m2.txt", "messages/m3.txt", "messages/m5.txt", "messages/m4.txt"};
 
+
         for (String m: msg) {
             new Decoder(m);
+
+            try {
+                String decryptedMsg = Resources.toString(Resources.getResource(m), Charsets.UTF_8);
+
+                assertEquals(Decoder.getDecodedMsg(), decryptedMsg);
+                System.out.println("Key: " + Decoder.getCipherKey() + ";\nMessage: " + Decoder.getDecodedMsg() + "\n");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        //Decoder decoder = new Decoder(msg);
     }
 }

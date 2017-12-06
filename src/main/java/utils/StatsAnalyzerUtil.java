@@ -1,15 +1,17 @@
-package util;
+package utils;
+
+import decoder.Decoder;
 
 import java.util.List;
 
 /**
  * Created by Dennis on 02-Dec-17.
  **/
-public class StatsAnalyzer {
+public class StatsAnalyzerUtil {
 
     private List<String> combinations;
 
-    public StatsAnalyzer(List<String> combinations) {
+    public StatsAnalyzerUtil(List<String> combinations) {
 
         this.combinations = combinations;
     }
@@ -18,7 +20,6 @@ public class StatsAnalyzer {
 
 
         String bingo = stats.get(0);
-        //int tmp = 0;
 
         for (int i = 0; i < stats.size() - 1; i++) {
 
@@ -28,11 +29,11 @@ public class StatsAnalyzer {
             }
         }
 
-        String lang = bingo.split(":")[2];
-        String cipherKey = bingo.split(":")[1];
+        //String lang = bingo.split(":")[2];
+        int cipherKey = Integer.parseInt(bingo.split(":")[1]);
+        String decodedMsg = combinations.get(cipherKey);
 
-        System.out.println("Mostly probable the language used is " + lang + ". The cipher key is " + cipherKey + ".");
-        System.out.println("MESSAGE: " + combinations.get(Integer.parseInt(cipherKey)));
-        System.out.println("");
+        Decoder.setCipherKey(cipherKey);
+        Decoder.setDecodedMsg(decodedMsg);
     }
 }

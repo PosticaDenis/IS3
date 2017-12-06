@@ -1,4 +1,4 @@
-package util;
+package utils;
 
 import com.google.common.base.CharMatcher;
 
@@ -8,16 +8,13 @@ import java.util.Set;
 /**
  * Created by Dennis on 02-Dec-17.
  **/
-public class StatisticsCollector{
+public class StatisticsCollectorUtil {
 
     private String language;
     private List<String> combinations;
     private Set<String> dictionary;
 
-    //private int stat;
-    //private int key;
-
-    public StatisticsCollector(String lang, List<String> aCombinations, Set<String> dictionary) {
+    public StatisticsCollectorUtil(String lang, List<String> aCombinations, Set<String> dictionary) {
 
         this.language = lang;
         this.combinations = aCombinations;
@@ -45,7 +42,7 @@ public class StatisticsCollector{
 
             for (String word: words) {
 
-                if (!SomeUtil.isIsCyrillic()) {
+                if (!CombinationsUtil.isIsCyrillic()) {
                     if (dictionary.contains(word.toLowerCase())) {
                         tmpStat += word.length();
                     }

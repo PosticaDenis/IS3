@@ -1,4 +1,4 @@
-package util;
+package utils;
 
 /**
  * Created by c-denipost on 01-Dec-17.
@@ -8,10 +8,10 @@ package util;
  **/
 public class ShiftUtil {
 
-    public String shift(String message, String language, int times) {
+    public String shift(String message, String alphabet, int times) {
         String bar = "";
 
-        if (language.equals("cyrillic")) {
+        if (alphabet.equals("cyrillic")) {
 
             for (char c : message.toCharArray()) {
                 if (isCyrillicLetter(c)) {

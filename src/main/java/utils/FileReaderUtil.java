@@ -1,4 +1,4 @@
-package util;
+package utils;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
@@ -9,11 +9,11 @@ import java.net.URL;
 /**
  * Created by Dennis on 02-Dec-17.
  **/
-public class FileReader {
+public class FileReaderUtil {
 
     private String message;
 
-    public FileReader(String msgPath) {
+    public FileReaderUtil(String msgPath) {
 
         URL url = Resources.getResource(msgPath);
         try {
